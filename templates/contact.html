@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<section class="contact-hero">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Let's Connect</span>
+            <h1>Get In Touch</h1>
+            <p>Have a project in mind or want to discuss opportunities? I'd love to hear from you!</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-content">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <div class="info-header">
+                    <h2>Let's Work Together</h2>
+                    <p>I'm always interested in hearing about new projects and opportunities.</p>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-details">
+                            <h3>Email</h3>
+                            <a href="mailto:akshayofficial5229@gmail.com">akshayofficial5229@gmail.com</a>
+                            <p>Best for detailed inquiries</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="method-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/akshay-geedan-b763a6193/" target="_blank">Connect on LinkedIn</a>
+                            <p>Professional networking</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="method-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+919789438134">+91 9789438134</a>
+                            <p>Available during business hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <form class="contact-form" action="https://formsubmit.co/akshayofficial5229@gmail.com" method="POST">
+                    <h2>Send Me a Message</h2>
+                    <p class="form-description">Fill out the form below and I'll get back to you as soon as possible.</p>
+
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio">
+                    <input type="hidden" name="_next" value="{{ request.url_root }}thank-you">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i> Full Name *
+                        </label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email Address *
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">
+                            <i class="fas fa-tag"></i> Subject *
+                        </label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="Job Opportunity">Job Opportunity</option>
+                            <option value="Project Collaboration">Project Collaboration</option>
+                            <option value="Consulting Inquiry">Consulting Inquiry</option>
+                            <option value="Speaking Engagement">Speaking Engagement</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment"></i> Message *
+                        </label>
+                        <textarea id="message" name="message" required placeholder="Tell me about your project or inquiry..." rows="6"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Location Section -->
+<section class="location-section">
+    <div class="container">
+        <div class="location-content">
+            <div class="location-info">
+                <h2><i class="fas fa-map-marker-alt"></i> Location</h2>
+                <p><strong>Current Base:</strong> Remote Work (Chennai, Tamil Nadu, India)</p>
+                <p><strong>Company HQ:</strong> Michigan, United States</p>
+                <p class="location-note">Available for full-time positions, remote work, technical consulting, education-related projects, and speaking engagements</p>
+            </div>
+            <div class="location-features">
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Remote First</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Excellent Communication</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>Team Collaboration</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Flexible Hours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Want to Learn More?</h2>
+            <p>Download my resume to see my complete professional history</p>
+            <a href="{{ url_for('download_resume') }}" class="btn btn-light">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
