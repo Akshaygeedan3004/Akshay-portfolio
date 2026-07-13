@@ -278,9 +278,10 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
-**Akshay**
+**Akshay Geedan**
 - Technical Lead at MoII AI
-- 7+ years of experience in Python, AI, and Cloud Engineering
+- 7+ years of product development experience in startup environments
+- Python Expert | AI Engineer | DevOps Enthusiast
 
 ## 🙏 Acknowledgments
 

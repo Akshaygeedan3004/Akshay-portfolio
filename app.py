@@ -73,9 +73,9 @@ def download_resume():
     resume_path = os.path.join('static', 'resume.pdf')
     
     if os.path.exists(resume_path):
-        return send_file(resume_path, as_attachment=True, download_name='Resume_Akshay.pdf')
+        return send_file(resume_path, as_attachment=True, download_name='Resume_Akshay_Geedan.pdf')
     else:
-        return "Resume not found. Please place your resume.pdf in the static folder.", 404
+        return render_template('resume_not_found.html'), 404
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

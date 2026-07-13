@@ -99,18 +99,20 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(type, 1000);
     }
 
-    // Animate skill bars on scroll
+    // Animate skill bars on scroll (only once)
     const skillBars = document.querySelectorAll('.skill-bar');
     const animateSkillBars = () => {
         skillBars.forEach(bar => {
             const barTop = bar.getBoundingClientRect().top;
             const triggerBottom = window.innerHeight * 0.9;
 
-            if (barTop < triggerBottom) {
-                const width = bar.style.width;
+            if (barTop < triggerBottom && !bar.dataset.animated) {
+                bar.dataset.animated = 'true';
+                const width = bar.style.width || bar.getAttribute('style').match(/width:\s*(\d+%)/)?.[1];
                 bar.style.width = '0';
                 setTimeout(() => {
                     bar.style.width = width;
+                    bar.style.transition = 'width 1s ease';
                 }, 100);
             }
         });
